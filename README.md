@@ -3,4 +3,4 @@
 
 1. Landing Page (Luxuaryrides)
 2. My Portfolio
-3.- Calculator
+3. Calculator
