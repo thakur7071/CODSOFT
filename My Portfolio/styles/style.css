@@ -1,0 +1,651 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/intro-bg.jpg);
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    background: rgb(23, 23, 26);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+/* breakpoints */
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgb(34, 34, 39);
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(0.15s * var(--i));
+    }
+}
+
+.navbar a:hover {
+    font-size: 1.3rem;
+    color: rgb(209, 54, 80);
+}
+
+.card1 {
+    margin-top: 230px;
+    padding-top: 100px;
+    width: 1000px;
+    height: 600px;
+    transition: border-color 0.5s ease;
+}
+
+.cardheader {
+    color: rgb(209, 54, 80);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.cardtitle {
+    color: white;
+    font-size: 80px;
+}
+
+.cardtext {
+    color: white;
+    font-size: 25px;
+}
+
+.social {
+    padding-top: 80px;
+    font-size: 30px;
+    color: white;
+}
+
+.social a {
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .card1 {
+        width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card1 {
+        width: 400px;
+    }
+
+    .cardheader {
+        font-size: 30px;
+    }
+
+
+    .cardtitle {
+        font-size: 35px;
+    }
+
+    .cardtext {
+        font-size: 16px;
+    }
+
+}
+
+.aboutme {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+.aboutme a button {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 400px) {
+    .aboutme {
+        width: 410px;
+    }
+}
+
+.div1 {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.div1 h3 {
+    color: rgb(209, 54, 80);
+    padding-top: 40px;
+}
+
+.div1 h2 {
+    margin-top: 10px;
+}
+
+
+.div1 img {
+    width: 120px;
+    height: 175px;
+    border-radius: 10%;
+}
+
+
+
+.div1 p {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+}
+
+@media (max-width:500px){
+    .div1 p{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.Skills {
+    background-color: rgb(80, 77, 77);
+    padding-top: 20px;
+}
+
+@media (max-width:400px) {
+    .Skills {
+        width: 410px;
+    }
+
+}
+
+.header2 {
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+}
+
+.header2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 100px;
+    background-color: rgb(209, 54, 80);
+    border-radius: 2px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 1rem;
+    padding: 1rem 80px;
+    font-size: 1.2rem;
+}
+
+.skill-box {
+    padding: 1rem;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.skill-box:hover>.skill-title:after,
+.skill-box:hover>.skill-title:before {
+    width: 35px;
+}
+
+.skill-box:hover .img {
+    transform: translateY(-10px);
+
+}
+
+.skill-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.skill-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+    background-color: rgb(209, 54, 80);
+    transition: .5s;
+}
+
+.skill-title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color: rgb(209, 54, 80);
+    transition: .5s;
+}
+
+.img {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    border-radius: 45px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 90px;
+    background: rgba(100, 100, 100, 0.5);
+    border-radius: 45px 0 0 45px;
+}
+
+.skill-title h3 {
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+.skill-icon {
+    width: 50px;
+    z-index: 2;
+}
+
+
+@media screen and (max-width: 990px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.project-head {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+}
+
+@media (max-width:400px) {
+    .project-head {
+        width: 410px;
+    }
+}
+
+.project-head h2 {
+    color: rgb(209, 54, 80);
+    font-size: 40px;
+}
+
+@media (max-width:400px) {
+    .project-head h2 {
+        font-size: 30 px;
+    }
+}
+
+.container2 {
+    position: relative;
+    background-color: black;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+@media (max-width: 400px) {
+    .container2 {
+        width: 410px;
+    }
+}
+
+.container2 .card2 {
+    position: relative;
+    display: flex;
+    max-width: 300px;
+    height: 215px;
+    background: white;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+}
+
+.container2 .card2:hover {
+    height: 360px;
+}
+
+.card2 button {
+    margin-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.container2 .card2 .imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 6px;
+    z-index: 1;
+}
+
+.container2 .card2 .imgBx img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.container2 .card2 .content3 {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container2 .card2:hover .content3 {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+@media (max-width: 400px) {
+    .contact {
+        width: 410px;
+    }
+}
+
+.contact .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: rgb(209, 54, 80);
+}
+
+.contact .content p {
+    font-weight: 300;
+    color: rgb(209, 54, 80);
+}
+
+.container4 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.container4 .contactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container4 .contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container4 .contactInfo .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.container4 .contactInfo .box .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+
+.container4 .contactInfo .box .text h3 {
+    font-weight: 500;
+    color: rgb(209, 54, 80);
+}
+
+.contactForm {
+    width: 40%;
+    padding: 40px;
+    background: black;
+}
+
+.contactForm h2 {
+    font-size: 30px;
+    color: rgb(209, 54, 80);
+    font-weight: 500;
+}
+
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus~span,
+
+.contactForm .inputBox input:valid~span,
+.contactForm .inputBox textarea:focus~span,
+
+.contactForm .inputBox textarea:valid~span {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type="submit"] {
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+@media (max-width: 991px) {
+    .contact {
+        padding: 50px;
+    }
+
+    .container4 {
+        flex-direction: column;
+    }
+
+    .container4 .contactInfo {
+        margin-bottom: 40px;
+    }
+
+    .container4 .contactInfo,
+    .contactForm {
+        width: 100%;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+}
+
+@media (max-width: 400px) {
+    .footer {
+        width: 410px;
+    }
+
+}
